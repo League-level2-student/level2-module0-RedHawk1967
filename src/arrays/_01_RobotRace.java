@@ -25,9 +25,11 @@ public class _01_RobotRace {
 	
 	
 	for (int i = 0; i < 50; i++) {
-		robots[i].move(i);
+		robots[i].move((int) Math.random());
 	}
-	
+	while (robots) {
+		
+	}
 	}
 	
 	//6. use a while loop to repeat step 5 until a robot has reached the top of the screen.
@@ -44,4 +46,4 @@ public class _01_RobotRace {
 	
 	
 	}
-	}
+	
