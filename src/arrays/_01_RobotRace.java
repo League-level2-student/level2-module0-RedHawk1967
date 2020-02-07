@@ -1,5 +1,9 @@
 package arrays;
 
+import java.util.Random;
+
+import javax.swing.text.StyledEditorKit.ForegroundAction;
+
 import org.jointheleague.graphical.robot.Robot;
 
 public class _01_RobotRace {
@@ -23,13 +27,14 @@ public class _01_RobotRace {
 	
 		
 	
-	
-	for (int i = 0; i < 50; i++) {
-		robots[i].move((int) Math.random());
-	}
-	while (robots) {
+
+	for (int i = 0; i < 5; i++) {
+		Random r = new Random(-50);
+		robots[i].move(r.nextInt());
 		
 	}
+	
+	
 	}
 	
 	//6. use a while loop to repeat step 5 until a robot has reached the top of the screen.

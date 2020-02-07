@@ -6,6 +6,7 @@
 
 package arrays;
 
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
@@ -20,9 +21,11 @@ public class _02_FindTheHiddenButton implements ActionListener{
 	JPanel panel;
 	
 	//1. create an array of JButtons. Don't initialize it yet.
-	
+	JButton[] buttons = new JButton[3];
 	//2 create an int variable called hiddenButton
 	
+			int hiddenButton = 0;
+			
 	public static void main(String[] args) {
 		new _02_FindTheHiddenButton().start();
 	}
@@ -33,13 +36,22 @@ public class _02_FindTheHiddenButton implements ActionListener{
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		//3.  Ask the user to enter a positive number and convert it to an int
-		
+		int ans = Integer.parseInt(JOptionPane.showInputDialog("enter a number (100s)"));
 		//4. Initialize the array of JButtons to be the size of the int created in step 3
+		for (int i = 0; i < 3; i++) {
+			buttons[i] = new JButton();
+			buttons[i].setPreferredSize(new Dimension ( ans,ans ));
+		}
 		
 		//5. Make a for loop to iterate through the JButton array
 			//6. initialize each JButton in the array
 			//7. add the ActionListener to each JButton
 			//8. add each JButton to the panel
+		JPanel panel = new JPanel();
+		for (int i = 0; i < 3; i++) {
+			buttons[i].addActionListener(this);
+			panel.add(buttons[i]);
+		}
 		
 		//9 add the panel to the window
 		
