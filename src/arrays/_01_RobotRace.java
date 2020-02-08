@@ -41,12 +41,13 @@ public class _01_RobotRace {
 			for (int i = 0; i < 5; i++) {
 
 				robots[i].setSpeed(50);
-				int x = random.nextInt(10);
+				int x = random.nextInt(15);
 				robots[i].move(x);
 
 				if (robots[i].getY() <= 0) {
+					System.out.println("Robot " + i + " Is the winner of the y race");
 					raceRunning = false;
-					System.out.println("Robot " + i + " Is the WINNER");
+				
 
 				}
 
@@ -66,24 +67,22 @@ public class _01_RobotRace {
 			
 			for (int i = 0; i < 5; i++) {
 
-				robots[i].setSpeed(50);
-				int x = random.nextInt(1);
-				if (x == 0) {
-					if (robots[i].getY() >= 299 && robots[i].getX() >= 299) {
-						circularRunning = false;
-						System.out.println("Robot " + i + " Is the WINNER");
-					for (int j = 0; j < 3; j++) {
-
-						robots[i].move(5);
-						robots[i].turn(5);
-					}
-
-				} else {
-					robots[i].move(5);
-					robots[i].turn(5);
+				robots[i].setSpeed(10);
+				int x = random.nextInt(10)+1;
+				for (int j = 0; j < x; j++) {
+					
+				
+				robots[i].move(1);
+				robots[i].turn(1);
+				
+				if (robots[i].getY() == 300 && robots[i].getX() == 300) {
+					System.out.println("Robot " + i + " is the winner of the circular race");
+					circularRunning = false;
+					System.exit(0);
 				}
-
-			}
+				}
+			
+			
 
 		}
 
