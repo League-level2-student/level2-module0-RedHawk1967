@@ -21,7 +21,7 @@ public class _02_FindTheHiddenButton implements ActionListener{
 	JPanel panel;
 	
 	//1. create an array of JButtons. Don't initialize it yet.
-	JButton[] buttons = new JButton[10000];
+	JButton[] buttons = new JButton[1000];
 	//2 create an int variable called hiddenButton
 	
 			int hiddenButton = 0;
@@ -38,7 +38,7 @@ public class _02_FindTheHiddenButton implements ActionListener{
 		//3.  Ask the user to enter a positive number and convert it to an int
 		int ans = Integer.parseInt(JOptionPane.showInputDialog("enter a number (100s)"));
 		//4. Initialize the array of JButtons to be the size of the int created in step 3
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 1000; i++) {
 			buttons[i] = new JButton();
 			buttons[i].setPreferredSize(new Dimension ( ans,ans ));
 		}
@@ -48,7 +48,7 @@ public class _02_FindTheHiddenButton implements ActionListener{
 			//7. add the ActionListener to each JButton
 			//8. add each JButton to the panel
 		JPanel panel = new JPanel();
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 1000; i++) {
 			buttons[i].addActionListener(this);
 			panel.add(buttons[i]);
 		}
@@ -60,7 +60,7 @@ public class _02_FindTheHiddenButton implements ActionListener{
 		//11. set the JFrame to visible.
 		window.setVisible(true);
 		//12. Give the user the instructions for the game.
-		JOptionPane.showMessageDialog(null,"find the button I think?");
+		JOptionPane.showMessageDialog(null,"find the button ");
 		//13. initialize the hiddenButton variable to a random number less than the int created in step 3
 		Random rand = new Random();
 		hiddenButton = rand.nextInt(ans)-1;
